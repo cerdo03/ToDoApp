@@ -1,0 +1,12 @@
+header{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+footer{
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}

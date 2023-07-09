@@ -1,0 +1,23 @@
+{
+  "name": "to_do_app",
+  "version": "1.0.0",
+  "description": "A simple to do app which helps users in task management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerdo03/ToDoApp.git"
+  },
+  "author": "Cerdo03",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cerdo03/ToDoApp/issues"
+  },
+  "homepage": "https://github.com/cerdo03/ToDoApp#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0"
+  }
+}
