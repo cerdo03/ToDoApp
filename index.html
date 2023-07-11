@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>To-Do App</title>
-</head>
-<body>
-  <header>
-    <h1 id="header">To-do App</h1>
-  </header>
-  <footer>
-    <p>&copy; 2023 Your Website</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-Do App</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="header">To-do App</h1>
+    </header>
+    <main>
+      <div class="three-cards">
+        <div class="card">
+          <div class="card-front" onclick="flipCard(this)">
+            <h2>Click here to Add Task</h2>
+          </div>
+          <div class="card-back">
+            <h3>Add Task</h3>
+            <form class="form">
+              <div>
+                <label for="title">Title:</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Enter the task title"
+                />
+              </div>
+
+              <div>
+                <label for="description">Description:</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Enter the task description"
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline" name="deadline" />
+              </div>
+              <div id="buttonDiv">
+                <button>Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front" id="view-task-front" onclick="flipCard(this)">
+            <h2>Click here to view pending tasks</h2>
+          </div>
+          <div class="card-back" id="view-task-back">
+            <h3>Pending Tasks</h3>
+            <ul id="pending_task_list"></ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front" onclick="flipCard(this)">
+            <h2>Click here to view completed tasks</h2>
+          </div>
+          <div class="card-back">
+            <h3>Completed Tasks</h3>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Made with love❤️<br />&copy; 2023</p>
+    </footer>
+  </body>
 </html>
