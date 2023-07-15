@@ -1,8 +1,10 @@
-*{
-  font-family: 'Courier New', Courier, monospace;;
+* {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
 }
-header{
-  font-family: 'Courier New', Courier, monospace;
+header {
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
   background-color: black;
   color: white;
@@ -13,7 +15,7 @@ header{
   padding: 5px;
   position: fixed;
 }
-footer{
+footer {
   background-color: black;
   padding: 15px;
   text-align: center;
@@ -23,7 +25,7 @@ footer{
   position: fixed;
   left: 0;
   bottom: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 body {
   display: flex;
@@ -56,34 +58,38 @@ main {
 
 .card-front {
   position: absolute;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   width: 100%;
   height: 100%;
   border: 1px solid black;
   border-radius: 10px;
-  backface-visibility:hidden;
+  backface-visibility: hidden;
   flex-direction: column;
   justify-content: center;
   display: flex;
   align-items: center;
   transition: transform 0.5s;
 }
-.card-back{
+.card-back {
   position: absolute;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   width: 100%;
   height: 100%;
   border: 1px solid black;
   border-radius: 10px;
-  backface-visibility:hidden;
+  backface-visibility: hidden;
   flex-direction: column;
   /* justify-content: center; */
   display: flex;
   /* align-items: center; */
   transition: transform 0.5s;
 }
-.card-front h2{
+.card-front h2 {
   text-decoration: none;
+}
+.card-back h3 {
+  margin: 20px;
+  display: block;
 }
 .card-front {
   transform: rotateY(0deg);
@@ -101,15 +107,14 @@ main {
   transform: rotateY(360deg);
 }
 
-.card-back label{
+.card-back label {
   display: inline-block;
   margin-top: 15px;
   margin-left: 20px;
   text-align: left;
 }
 .card-back input,
-.card-back textarea,
-.card-back button{
+.card-back textarea {
   margin-top: 5px;
   margin-left: 20px;
   flex: 1;
@@ -121,46 +126,94 @@ main {
   padding-right: 6px;
   border: 1px solid black;
 }
-.card-back textarea{
+.card-back textarea {
   min-height: 70px;
 }
-.card-back button{
+.card-back button {
   margin-top: 25px;
   width: 50%;
-  flex: 1;
-  background-color: #DAD8D8;
+  padding: 0px;
+  flex: 0.5;
+  background-color: #dad8d8;
   border-radius: 4px;
 }
-#buttonDiv{
+#buttonDiv {
   align-items: center;
 }
 .card-back form {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.card-back div{
+.card-back div {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: left;
   width: 100%;
 }
-.three-cards{
+.three-cards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.card:first-child{
+.card:first-child {
   margin-left: 0;
 }
-.card:last-child{
+.card:last-child {
   margin-right: 0;
 }
 
+#pending_task_list {
+  padding: 8px 2px;
+  margin: 0px 0px 4px 0px ;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+.card.flip #pending_task_list {
+  display: flex; /* Show the list when the card is flipped */
+}
+.task-item {
+  list-style-type: none;
+  padding: 0;
+  margin: 2px 40px;
+  display: block;
+  border-bottom: 1px black solid;
+  /* border-style:solid; */
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
 
+.task-title {
+  font-weight: bold;
+  margin: 5px 0px;
+  display: inline-block;
+  width: 50%;
+  align-items: center;
+}
 
+.task-deadline {
+  font-size: small;
+  display: inline-block;
+  width: 50%;
+  align-items: end;
+}
 
-
-
-
+.task-desc {
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-height: 1.5em; /* fallback */
+  max-height: 2 * N;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 8px 0px 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

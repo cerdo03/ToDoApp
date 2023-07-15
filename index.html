@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>To-Do App</title>
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -19,7 +20,7 @@
           </div>
           <div class="card-back">
             <h3>Add Task</h3>
-            <form class="form">
+            <!-- <form class="form"> -->
               <div>
                 <label for="title">Title:</label>
                 <input
@@ -44,16 +45,16 @@
                 <input type="date" id="deadline" name="deadline" />
               </div>
               <div id="buttonDiv">
-                <button>Submit</button>
+                <button onclick="onSubmit(); getTasks();">Submit</button>
               </div>
-            </form>
+            <!-- </form> -->
           </div>
         </div>
         <div class="card">
           <div class="card-front" id="view-task-front" onclick="flipCard(this)">
             <h2>Click here to view pending tasks</h2>
           </div>
-          <div class="card-back" id="view-task-back">
+          <div class="card-back" id="view-task-back" onclick="flipCard(this)">
             <h3>Pending Tasks</h3>
             <ul id="pending_task_list"></ul>
           </div>
@@ -68,9 +69,15 @@
         </div>
       </div>
     </main>
-
+<!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut ipsam odit eius laudantium temporibus id, et, sunt voluptatem similique perferendis placeat ullam neque ex veniam vel expedita impedit quo? Impedit. -->
     <footer>
       <p>Made with love❤️<br />&copy; 2023</p>
     </footer>
   </body>
+  <script>
+    $(document).ready(function(){
+      console.log("Page loaded");
+      getTasks();
+    });
+  </script>
 </html>
